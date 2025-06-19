@@ -1,27 +1,34 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Heart, BookOpen, Globe, Star, Sparkles, GraduationCap } from "lucide-react"
+import { useEffect, useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Heart,
+  BookOpen,
+  Globe,
+  Star,
+  Sparkles,
+  GraduationCap
+} from "lucide-react";
 
 export default function ThankYouPage() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [currentQuote, setCurrentQuote] = useState(0)
+  const [isVisible, setIsVisible] = useState(false);
+  const [currentQuote, setCurrentQuote] = useState(0);
 
   const quotes = [
     "Merci pour votre patience et votre dévouement extraordinaire",
     "Dziękuję za wszystko, co dla mnie robiłaś",
-    "Vous êtes une enseignante exceptionnelle et inspirante",
-  ]
+    "Vous êtes une enseignante exceptionnelle et inspirante"
+  ];
 
   useEffect(() => {
-    setIsVisible(true)
+    setIsVisible(true);
     const interval = setInterval(() => {
-      setCurrentQuote((prev) => (prev + 1) % quotes.length)
-    }, 4000)
-    return () => clearInterval(interval)
-  }, [])
+      setCurrentQuote(prev => (prev + 1) % quotes.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 overflow-hidden">
@@ -53,7 +60,9 @@ export default function ThankYouPage() {
       <div className="relative z-10">
         {/* En-tête */}
         <header
-          className={`text-center pt-16 pb-8 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"}`}
+          className={`text-center pt-16 pb-8 transition-all duration-1000 ${isVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-10"}`}
         >
           <div className="flex justify-center items-center gap-3 mb-4">
             <GraduationCap className="w-8 h-8 text-purple-400" />
@@ -63,7 +72,7 @@ export default function ThankYouPage() {
             <Heart className="w-8 h-8 text-rose-400 animate-pulse" />
           </div>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
-            Un remerciement sincère à une enseignante extraordinaire
+          Un grand merci à l'éminente professeure Agnieszka.
           </p>
         </header>
 
@@ -71,12 +80,17 @@ export default function ThankYouPage() {
         <main className="container mx-auto px-4 pb-16">
           {/* Carte principale */}
           <Card
-            className={`max-w-4xl mx-auto mb-12 shadow-2xl border-0 bg-gray-800/80 backdrop-blur-sm transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+            className={`max-w-4xl mx-auto mb-12 shadow-2xl border-0 bg-gray-800/80 backdrop-blur-sm transition-all duration-1000 delay-300 ${isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"}`}
           >
             <CardContent className="p-8 md:p-12">
               <div className="text-center mb-8">
                 <div className="flex justify-center gap-2 mb-6">
-                  <Badge variant="secondary" className="bg-red-900/50 text-red-300 hover:bg-red-800/50 border-red-700">
+                  <Badge
+                    variant="secondary"
+                    className="bg-red-900/50 text-red-300 hover:bg-red-800/50 border-red-700"
+                  >
                     🇵🇱 Polonaise
                   </Badge>
                   <Badge
@@ -99,17 +113,26 @@ export default function ThankYouPage() {
 
                 <div className="relative h-16 mb-8">
                   <p
-                    className={`absolute inset-0 text-lg md:text-xl text-gray-300 italic transition-all duration-500 ${currentQuote === 0 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                    className={`absolute inset-0 text-lg md:text-xl text-gray-300 italic transition-all duration-500 ${currentQuote ===
+                    0
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-4"}`}
                   >
                     "{quotes[0]}"
                   </p>
                   <p
-                    className={`absolute inset-0 text-lg md:text-xl text-gray-300 italic transition-all duration-500 ${currentQuote === 1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                    className={`absolute inset-0 text-lg md:text-xl text-gray-300 italic transition-all duration-500 ${currentQuote ===
+                    1
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-4"}`}
                   >
                     "{quotes[1]}"
                   </p>
                   <p
-                    className={`absolute inset-0 text-lg md:text-xl text-gray-300 italic transition-all duration-500 ${currentQuote === 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+                    className={`absolute inset-0 text-lg md:text-xl text-gray-300 italic transition-all duration-500 ${currentQuote ===
+                    2
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-4"}`}
                   >
                     "{quotes[2]}"
                   </p>
@@ -118,64 +141,68 @@ export default function ThankYouPage() {
 
               <div className="prose prose-lg max-w-none text-gray-200 leading-relaxed">
                 <p className="text-center mb-6">
-                  Ce qui vous rend vraiment spéciale, ce n'est pas seulement votre incroyable capacité à enseigner le
-                  français, mais aussi la perspective unique que vous apportez en tant qu'enseignante polonaise en
-                  Belgique. Vous m'avez montré que l'apprentissage des langues va bien au-delà de la grammaire et du
-                  vocabulaire—il s'agit de connecter les cultures, de partager des histoires et de construire des ponts
-                  entre différents mondes.
+                  Ce qui vous rend vraiment spéciale, ce n'est pas seulement
+                  votre incroyable capacité à enseigner le français, mais aussi
+                  la perspective unique que vous apportez en tant qu'enseignante
+                  polonaise en Belgique. Vous m'avez montré que l'apprentissage
+                  des langues va bien au-delà de la grammaire et du
+                  vocabulaire—il s'agit de connecter les cultures, de partager
+                  des histoires et de construire des ponts entre différents
+                  mondes.
                 </p>
 
                 <p className="text-center mb-6">
-                  Votre patience, votre dévouement et votre passion pour l'enseignement ont rendu chaque cours un
-                  plaisir. Vous m'avez aidé(e) non seulement à apprendre le français, mais aussi à apprécier la belle
-                  complexité de la communication multilingue. À travers vos yeux, j'ai vu comment la langue peut être un
-                  pont entre la Pologne, la France et la Belgique—et comment une seule enseignante peut faire toute la
+                  Votre patience, votre dévouement et votre passion pour
+                  l'enseignement ont rendu chaque cours agréable. Vous m'avez
+                  aidé non seulement à apprendre le français, mais aussi à
+                  apprécier la beauté de la communication multilingue. Grâce à
+                  vous, j'ai compris qu'un seul enseignant peut faire toute la
                   différence.
                 </p>
 
                 <p className="text-center font-medium text-purple-300">
-                  Merci pour tout ce que vous faites. Vous êtes vraiment appréciée ! 💜
+                  Merci pour tout ce que vous faites. Vous êtes vraiment
+                  appréciée ! 💜
                 </p>
               </div>
             </CardContent>
           </Card>
 
           {/* Cartes d'appréciation */}
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <Card
-              className={`group hover:shadow-xl transition-all duration-500 border-0 bg-gradient-to-br from-rose-900/40 to-pink-900/40 hover:scale-105 backdrop-blur-sm border border-rose-700/30 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} delay-500`}
+              className={`group hover:shadow-xl transition-all duration-500 border-0 bg-gradient-to-br from-rose-900/40 to-pink-900/40 hover:scale-105 backdrop-blur-sm border border-rose-700/30 ${isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"} delay-500`}
             >
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 bg-rose-800/50 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-transform duration-300">
                   <Heart className="w-8 h-8 text-rose-300" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-100 mb-2">Passion</h3>
-                <p className="text-gray-300">Votre amour pour l'enseignement brille dans chaque leçon</p>
+                <h3 className="text-xl font-semibold text-gray-100 mb-2">
+                  Passion
+                </h3>
+                <p className="text-gray-300">
+                  Votre amour pour l'enseignement brille dans chaque leçon
+                </p>
               </CardContent>
             </Card>
 
             <Card
-              className={`group hover:shadow-xl transition-all duration-500 border-0 bg-gradient-to-br from-blue-900/40 to-purple-900/40 hover:scale-105 backdrop-blur-sm border border-blue-700/30 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} delay-700`}
-            >
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-blue-800/50 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-transform duration-300">
-                  <Globe className="w-8 h-8 text-blue-300" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-100 mb-2">Pont Culturel</h3>
-                <p className="text-gray-300">Connecter magnifiquement les cultures polonaise, française et belge</p>
-              </CardContent>
-            </Card>
-
-            <Card
-              className={`group hover:shadow-xl transition-all duration-500 border-0 bg-gradient-to-br from-green-900/40 to-emerald-900/40 hover:scale-105 backdrop-blur-sm border border-green-700/30 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} delay-900`}
+              className={`group hover:shadow-xl transition-all duration-500 border-0 bg-gradient-to-br from-green-900/40 to-emerald-900/40 hover:scale-105 backdrop-blur-sm border border-green-700/30 ${isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"} delay-900`}
             >
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 bg-green-800/50 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-transform duration-300">
                   <BookOpen className="w-8 h-8 text-green-300" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-100 mb-2">Dévouement</h3>
+                <h3 className="text-xl font-semibold text-gray-100 mb-2">
+                  Dévouement
+                </h3>
                 <p className="text-gray-300">
-                  Votre engagement envers la réussite des étudiants est vraiment inspirant
+                  Votre engagement envers la réussite des étudiants est vraiment
+                  inspirant
                 </p>
               </CardContent>
             </Card>
@@ -183,17 +210,28 @@ export default function ThankYouPage() {
 
           {/* Message final */}
           <div
-            className={`text-center mt-16 transition-all duration-1000 delay-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+            className={`text-center mt-16 transition-all duration-1000 delay-1000 ${isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"}`}
           >
             <div className="inline-flex items-center gap-2 text-2xl font-medium text-purple-300 mb-4">
               <Sparkles className="w-6 h-6" />
               <span>Avec toute ma gratitude</span>
               <Sparkles className="w-6 h-6" />
             </div>
-            <p className="text-gray-400 text-lg">De votre élève reconnaissant <a href="https://mohamedalakhaly.github.io/my-portfolio/" className="text-white">Mohamed</a> 🎓</p>
+            <p className="text-gray-400 text-lg">
+            De la part de votre reconnaissant étudiant {" "}
+              <a
+                href="https://mohamedalakhaly.github.io/my-portfolio/"
+                className="text-white"
+              >
+                Mohamed
+              </a>{" "}
+              🎓
+            </p>
           </div>
         </main>
       </div>
     </div>
-  )
+  );
 }
