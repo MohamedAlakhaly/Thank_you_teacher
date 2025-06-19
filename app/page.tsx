@@ -72,7 +72,7 @@ export default function ThankYouPage() {
             <Heart className="w-8 h-8 text-rose-400 animate-pulse" />
           </div>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
-          Un grand merci à l'éminente professeure Agnieszka.
+            Un grand merci à l'éminente professeure Agnieszka.
           </p>
         </header>
 
@@ -141,14 +141,13 @@ export default function ThankYouPage() {
 
               <div className="prose prose-lg max-w-none text-gray-200 leading-relaxed">
                 <p className="text-center mb-6">
-                  Ce qui vous rend vraiment spéciale, ce n'est pas seulement
-                  votre incroyable capacité à enseigner le français, mais aussi
-                  la perspective unique que vous apportez en tant qu'enseignante
-                  polonaise en Belgique. Vous m'avez montré que l'apprentissage
-                  des langues va bien au-delà de la grammaire et du
-                  vocabulaire—il s'agit de connecter les cultures, de partager
-                  des histoires et de construire des ponts entre différents
-                  mondes.
+                  Ce qui vous distingue vraiment, ce n'est pas seulement votre
+                  incroyable capacité à enseigner le français, mais aussi votre
+                  perspective unique en tant que professeur de français en
+                  Belgique. Vous m'avez montré qu'apprendre les langues va
+                  au-delà de la grammaire et du vocabulaire : il s'agit de
+                  connecter les cultures, de partager des histoires et de créer
+                  des ponts entre différents mondes.
                 </p>
 
                 <p className="text-center mb-6">
@@ -220,7 +219,7 @@ export default function ThankYouPage() {
               <Sparkles className="w-6 h-6" />
             </div>
             <p className="text-gray-400 text-lg">
-            De la part de votre reconnaissant étudiant {" "}
+              De la part de votre reconnaissant étudiant {" "}
               <a
                 href="https://mohamedalakhaly.github.io/my-portfolio/"
                 className="text-white"
